@@ -1,0 +1,37 @@
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Módulo 2 - Exercicio 3</title>
+</head>
+
+<body>
+
+    <div id="app">
+
+    </div>    
+
+    <script>
+        // Selecionando  a div com id app
+        var divElement = document.querySelector('#app');
+        
+        var nomes = ["Diego", "Gabriel", "Lucas"];
+
+        var listElement = document.createElement('ul');
+        listElement.style.listStyleType = 'disc';
+    
+        console.log(listElement);
+
+        for(name of nomes){
+            var textElement = document.createElement('li');
+            textElement.textContent = name;
+
+            listElement.appendChild(textElement);
+        }
+
+        divElement.appendChild(listElement);
+
+    </script> 
+</body>
+
+</html>

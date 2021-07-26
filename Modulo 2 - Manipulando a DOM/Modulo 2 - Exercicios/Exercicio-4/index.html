@@ -1,0 +1,63 @@
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Módulo 2 - Exercicio 4</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <input type="text" id="newName">
+
+        <button id="adicionar">Adicionar</button>
+    </div>
+
+    <script>
+        // Selecionando  a div com id app
+        var divElement = document.querySelector('#app');
+
+        var inputElement = document.querySelector('#newName');
+
+        var buttonElement = document.querySelector('#adicionar');
+        buttonElement.onclick = addName;
+
+        var nomes = ["Diego", "Gabriel", "Lucas"];
+
+        var listElement = document.createElement('ul');
+        listElement.style.listStyleType = 'disc';
+
+
+        console.log(listElement);
+        function getNames() {
+            listElement = document.createElement('ul');
+
+            for (name of nomes) {
+                var textElement = document.createElement('li');
+
+                textElement.textContent = name;
+
+                listElement.appendChild(textElement);
+            }
+            divElement.appendChild(listElement);
+        }
+
+        getNames();
+
+        function addName() {
+
+            divElement.removeChild(listElement);
+
+            var novoNome = inputElement.value;
+
+            nomes.push(novoNome);
+
+            getNames();
+
+            inputElement.value = '';
+
+        }
+    </script>
+</body>
+
+</html>

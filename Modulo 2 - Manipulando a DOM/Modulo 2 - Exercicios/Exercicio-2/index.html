@@ -1,0 +1,79 @@
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Módulo 2 - Exercicio 2</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <button id="novoQuadrado">Criar novo quadrado</button>
+
+
+    </div>
+
+    <script>
+        // Selecionando  a div com id app
+        var divElement = document.querySelector('#app');
+
+        // Selecionando o elemento botão com id novoQuadrado
+        var buttonElement = document.querySelector('button#novoQuadrado');
+        
+        // variavel que vai receber o elemento criado
+        var quadradoVermelho;
+
+        var id = 0;
+
+        
+        function novoQuadrado(){
+            // Criando novo elemento
+            quadradoVermelho = document.createElement('div');
+
+            // Setando o classe do novo elemento;
+            quadradoVermelho.className = 'quadrados';
+
+            // Setando o id do novo elemento;
+            quadradoVermelho.id = id + 1;
+
+            // Estilizando o elemento;
+            quadradoVermelho.style.width = 100;
+            quadradoVermelho.style.height = 100;
+            quadradoVermelho.style.backgroundColor = '#f00';
+            quadradoVermelho.style.margin = 10;
+
+            // Definindo a função de onMouseOver para o elemento
+            quadradoVermelho.onmouseover = function (){
+                var color = getRandomColor();
+
+                quadradoVermelho.style.backgroundColor = color;
+            };
+
+            // Adicionando o elemento a DIV com id app
+            divElement.appendChild(quadradoVermelho);
+
+            console.log(quadradoVermelho);
+            id++;
+        }
+        
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+               color += letters[Math.floor(Math.random() * 16)];
+            }
+
+            console.log('ta pegando');
+
+            return color;
+        }
+
+        // Adicionando o evento de click ao botão
+        buttonElement.onclick = novoQuadrado;
+        
+        
+        
+    </script> 
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Módulo 2 - Exercicio 1</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <button id="novoQuadrado">Criar novo quadrado</button>
+    </div>
+
+    <script>
+        // Selecionando  a div com id app
+        var divElement = document.querySelector('#app');
+
+        // Selecionando o elemento botão com id novoQuadrado
+        var buttonElement = document.querySelector('button#novoQuadrado');
+        
+
+        function novoQuadrado(){
+            // Criando novo elemento
+            var quadradoVermelho = document.createElement('div');
+
+            // Estilizando o elemento;
+            quadradoVermelho.style.width = 100;
+            quadradoVermelho.style.height = 100;
+            quadradoVermelho.style.backgroundColor = '#f00';
+            quadradoVermelho.style.margin = 10;
+
+            // Adicionando o elemento a DIV com id app
+            divElement.appendChild(quadradoVermelho);
+        }
+
+        // Adicionando o evento de click ao botão
+        buttonElement.onclick = novoQuadrado;
+        
+    </script> 
+</body>
+
+</html>
